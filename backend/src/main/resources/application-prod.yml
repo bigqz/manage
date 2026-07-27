@@ -4,9 +4,13 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${DB_URL:jdbc:mysql://localhost:3306/manage}
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:123456}
+    url: jdbc:mysql://${DB_HOST:manage-db-wangkun2020123-9c50.g.aivencloud.com}:${DB_PORT:26347}/${DB_NAME:defaultdb}?useSSL=true&requireSSL=true&serverTimezone=Asia/Shanghai&characterEncoding=utf-8&allowPublicKeyRetrieval=true
+    username: ${DB_USER:avnadmin}
+    password: ${DB_PASSWORD}
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 5
+      minimum-idle: 2
 
 mybatis-plus:
   configuration:
