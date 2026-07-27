@@ -1,6 +1,8 @@
 # 多阶段构建 - 先用 Maven 编译，再用 JRE 运行
 FROM maven:3.9-eclipse-temurin-17-alpine AS build
 WORKDIR /app
+# Force cache bust - v3
+RUN echo "cache-bust-3" > /tmp/cache-bust
 COPY pom.xml .
 RUN mvn dependency:go-offline -B
 COPY src ./src
