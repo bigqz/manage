@@ -15,6 +15,11 @@ public class ManageApplication {
         SpringApplication.run(ManageApplication.class, args);
     }
 
+    @GetMapping("/")
+    public String root() {
+        return "OK - Manage Backend";
+    }
+
     @GetMapping("/health")
     public String health() {
         return "OK - Manage Backend Running";
