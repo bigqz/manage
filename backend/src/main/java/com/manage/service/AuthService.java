@@ -70,8 +70,7 @@ public class AuthService {
     }
 
     private List<RoleVO> listRolesByUserId(Long userId) {
-        List<Long> roleIds = userRoleMapper.selectList(new LambdaQueryWrapper<com.manage.entity.SysUserRole>()
-                        .eq(com.manage.entity.SysUserRole::getUserId, userId))
+        List<Long> roleIds = userRoleMapper.selectByUserId(userId)
                 .stream()
                 .map(com.manage.entity.SysUserRole::getRoleId)
                 .toList();
