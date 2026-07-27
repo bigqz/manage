@@ -17,6 +17,6 @@ services:
       - key: DB_PASSWORD
         sync: false
       - key: JWT_SECRET
-        generateValue: true
+        value: manage-jwt-secret-key-must-be-at-least-32-bytes-long-for-hs256-algorithm-2026
       - key: SPRING_PROFILES_ACTIVE
         value: prod
