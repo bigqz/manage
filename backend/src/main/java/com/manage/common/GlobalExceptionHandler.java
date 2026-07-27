@@ -25,8 +25,12 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public Result<Void> handleException(Exception e) {
+    public Result<String> handleException(Exception e) {
         e.printStackTrace();
-        return Result.fail("服务器内部错误");
+        String detail = e.getClass().getName() + ": " + e.getMessage();
+        if (e.getCause() != null) {
+            detail += " | Caused by: " + e.getCause().getClass().getName() + ": " + e.getCause().getMessage();
+        }
+        return Result.fail(500, "服务器内部错误: " + detail);
     }
 }
