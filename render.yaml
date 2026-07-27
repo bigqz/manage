@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: manage-backend
+    runtime: docker
+    repo: https://github.com/bigqz/manage
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    envVars:
+      - key: DB_URL
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
