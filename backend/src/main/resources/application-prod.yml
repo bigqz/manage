@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${DB_HOST:manage-db-wangkun2020123-9c50.g.aivencloud.com}:${DB_PORT:26347}/${DB_NAME:defaultdb}?useSSL=true&requireSSL=true&verifyServerCertificate=false&serverTimezone=Asia/Shanghai&characterEncoding=utf-8&allowPublicKeyRetrieval=true&autoReconnect=true
+    url: jdbc:mysql://${DB_HOST:manage-db-wangkun2020123-9c50.g.aivencloud.com}:${DB_PORT:26347}/${DB_NAME:defaultdb}?sslMode=VERIFY_CA&serverTimezone=Asia/Shanghai&characterEncoding=utf-8&allowPublicKeyRetrieval=true
     username: ${DB_USER:avnadmin}
     password: ${DB_PASSWORD}
     hikari:
