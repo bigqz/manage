@@ -1,0 +1,20 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DB_URL:jdbc:mysql://localhost:3306/manage}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:123456}
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+
+jwt:
+  secret: ${JWT_SECRET:a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6}
+  expiration: 86400000
